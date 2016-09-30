@@ -33,22 +33,22 @@ function getGuess() {
 
 //compare letter guess to random word
 function compareLetters (letter) {
-  event.preventDefault();
-  // console.log(randomWord[]);
   for(var i = 0; i < randomWord.length; i++) {
     if (randomWord[i] == letter) {
       wordContainer.children[i].textContent = letter;
       console.log("Huzzah!");
-      } else {
-      console.log("No!!");
-    }
+      }
    }
 }
-//decrease number of guesses left
+//decrease number of guesses left and print GAME OVER if guesses are equal to zero 
+var banner = document.querySelector("h1");
 function decreaseGuess() {
   guessesLeft -= 1;
   var guessNumber = document.getElementById("guess-number");
   guessNumber.textContent = guessesLeft;
+  if(guessesLeft == 0) {
+    banner.textContent = "GAME OVER!";
+  }
 }
 
 //update empty spaces to correspond to the number of letters in the word
