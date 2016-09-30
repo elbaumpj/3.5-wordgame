@@ -13,24 +13,45 @@ function generateRandomWord() {
   return wordsOverThree[randomNumber];
 }
 
-console.log(generateRandomWord()); //prints random word to the console
 
-//get player's guess and decrease number of guesses left
+var randomWord = generateRandomWord();
+var guessesLeft = 8;
+
+console.log(randomWord); //prints random word to the console
+
+//get player's guess
 var button = document.getElementById("button");
 button.addEventListener("click", getGuess);
 
 function getGuess() {
   var guess = document.getElementById("guess");
   var letter = guess.value;
-  guess.value = "";
+  compareLetters(letter);
   decreaseGuess();
+  guess.value = "";
 }
 
+//compare letter guess to random word
+function compareLetters (letter) {
+  console.log(randomWord);
+  for(var i = 0; i < randomWord.length; i++) {
+    if (randomWord[i] == letter) {
+      console.log("Huzzah!");
+      } else {
+      console.log("No!!");
+    }
+   }
+}
+//decrease number of guesses left
 function decreaseGuess() {
+  guessesLeft -= 1;
   var guessNumber = document.getElementById("guess-number");
+  guessNumber.textContent = guessesLeft;
 }
 
-
-
+//update empty spaces to correspond to the number of letters in the word
+var characterSpans = document.createElement("span");
+var wordContainer = document.querySelector("word-container");
+wordContainer.appendChild(characterSpans);
 
 }());
