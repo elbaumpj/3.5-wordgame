@@ -33,9 +33,11 @@ function getGuess() {
 
 //compare letter guess to random word
 function compareLetters (letter) {
-  console.log(randomWord);
+  event.preventDefault();
+  // console.log(randomWord[]);
   for(var i = 0; i < randomWord.length; i++) {
     if (randomWord[i] == letter) {
+      wordContainer.children[i].textContent = letter;
       console.log("Huzzah!");
       } else {
       console.log("No!!");
@@ -50,8 +52,14 @@ function decreaseGuess() {
 }
 
 //update empty spaces to correspond to the number of letters in the word
-var characterSpans = document.createElement("span");
-var wordContainer = document.querySelector("word-container");
-wordContainer.appendChild(characterSpans);
+var wordContainer = document.querySelector(".word-container");
+
+
+for(var i = 0; i < randomWord.length; i++) {
+  var characterSpans = document.createElement("span");
+  wordContainer.appendChild(characterSpans);
+}
+
+
 
 }());
