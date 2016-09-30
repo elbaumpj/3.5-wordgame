@@ -32,15 +32,19 @@ function getGuess() {
 }
 
 //compare letter guess to random word
+var correctLetter = 0;
 function compareLetters (letter) {
   for(var i = 0; i < randomWord.length; i++) {
     if (randomWord[i] == letter) {
       wordContainer.children[i].textContent = letter;
-      console.log("Huzzah!");
+      correctLetter += 1;
       }
+    if(correctLetter == randomWord.length) {
+      banner.textContent = "YOU WIN!!!";
+    }
    }
 }
-//decrease number of guesses left and print GAME OVER if guesses are equal to zero 
+//decrease number of guesses left and print GAME OVER if guesses are equal to zero
 var banner = document.querySelector("h1");
 function decreaseGuess() {
   guessesLeft -= 1;
