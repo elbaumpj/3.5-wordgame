@@ -15,7 +15,7 @@ function generateRandomWord() {
 
 
 var randomWord = generateRandomWord();
-var guessesLeft = 8;
+var guessesLeft = 10;
 
 console.log(randomWord); //prints random word to the console
 
@@ -36,12 +36,12 @@ var correctLetter = 0;
 function compareLetters (letter) {
   for(var i = 0; i < randomWord.length; i++) {
     if (randomWord[i] == letter) {
-      wordContainer.children[i].textContent = letter;
+      wordContainer.children[i].textContent = letter; //Mady helped with "children[i]"...I was struggling to access the HTML node's children
       correctLetter += 1;
       }
     if(correctLetter == randomWord.length) {
       banner.textContent = "YOU WIN!!!";
-    }
+     }
    }
 }
 //decrease number of guesses left and print GAME OVER if guesses are equal to zero

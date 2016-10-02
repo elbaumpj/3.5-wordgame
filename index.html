@@ -7,26 +7,32 @@
   </head>
   <body>
 
-    <h1>Current Game</h1>
+    <div class="all">
+      <h1>
+        Hangman
+        <img src="hangman.png" alt="" />
+      </h1>
 
-    <h3 class="display">
-      <p class="guesses">
-        Guesses: <span id="guess-number">8</span>
-      </p>
-      <p class="message">
-      Your Word:
-      </p>
-      <div class="word-container">
+      <h3 class="display">
+        <p class="guesses">
+          Guesses: <span id="guess-number">10</span>
+        </p>
+        <p class="message">
+        Your Word:
+        </p>
+        <div class="word-container">
 
-      </div>
-    </h3>
+        </div>
+      </h3>
 
-    <form action>
-      <input type="text" id="guess" name="guess" maxlength="1" value="" placeholder="your guess here">
-      <input type="button" id="button" name="guessButton" value="guess">
-    </form>
+      <form action>
+        <input type="text" id="guess" name="guess" maxlength="1" value="" placeholder="your guess here">
+        <input type="button" id="button" name="guessButton" value="guess">
+      </form>
 
-    <script type="text/javascript" src="js/common-words.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
+      <script type="text/javascript" src="js/common-words.js"></script>
+      <script type="text/javascript" src="js/main.js"></script>
+    </div>
+
   </body>
 </html>
