@@ -1,1 +1,2 @@
 # 3.5-wordgame
+* This project was completed at the end of Week 3 at The Iron Yard. The assignment was to create a hangman game in the browser. A list of words was given, and I then had to use JavaScript functions, conditionals, loops, arrays and objects to execute the game logic and change the DOM based on application state. There's a link to the app in the repo description, and you can also clone the repo if you'd like to get it working locally. 
